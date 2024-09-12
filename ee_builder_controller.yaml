@@ -10,7 +10,7 @@
     ee_list:
       - name: config-rhel9
         alt_name: Custom EE Config
-        tag: v1
+        tag: v10
         options:
           package_manager_path: /usr/bin/microdnf
         dependencies:
