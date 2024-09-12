@@ -31,10 +31,3 @@
             - RUN echo This is a post-install command!
   roles:
     - infra.ee_utilities.ee_builder
-
-
-  tasks:
-    - name: Save
-      ansible.builtin.set_stats:
-        data:
-          controller_execution_environments: "{{ controller_execution_environments }}"

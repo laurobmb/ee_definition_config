@@ -2,6 +2,12 @@
 - name: Playbook to create custom EE
   hosts: all
   gather_facts: false
+  vars:
+    controller_execution_environments:
+      - name: ee-config-hub-rhel9
+        description: ee cac
+        organization: ee_build
+        image: automationhub01.localnet.local/admin/config-rhel9:v10
 
   tasks:
     - name: Add Execution Environment
