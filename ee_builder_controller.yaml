@@ -3,34 +3,31 @@
   hosts: localhost
   gather_facts: false
   vars:
-    # For controller configuration definition
+    ee_validate_certs: false
     ee_reg_credential: Automation Hub Container Registry
-    ee_base_image: registry.redhat.io/ansible-automation-platform-22/ee-minimal-rhel8:latest
+    ee_base_image: registry.redhat.io/ansible-automation-platform-24/ee-minimal-rhel9:latest
+    ee_pull_collections_from_hub: true
     ee_list:
-      - name: custom_ee
-        alt_name: Custom EE
-        tag: 1-11-21-2
-        # base_image
+      - name: config-rhel9
+        alt_name: Custom EE Config
+        tag: v1
+        options:
+          package_manager_path: /usr/bin/microdnf
         dependencies:
           system:
-            - python38-requests [platform:centos-8 platform:rhel-8]
-            - python38-pyyaml [platform:centos-8 platform:rhel-8]
+            - python-requests
+            - python-pyyaml
           python:
-            - pytz  # for schedule_rrule lookup plugin
-            - python-dateutil>=2.7.0  # schedule_rrule
-            - awxkit  # For import and export modules
+            - pyOpenSSL
           galaxy:
             collections:
-              - name: awx.awx
-                version: 22.6.0
-              - name: infra.controller_configuration
               - name: infra.ah_configuration
+              - name: infra.controller_configuration
+              - name: infra.eda_configuration
+              - name: infra.ee_utilities
+              - name: containers.podman
         build_steps:
-          prepend_final:
-            - RUN whoami
-            - RUN cat /etc/os-release
           append_final:
             - RUN echo This is a post-install command!
   roles:
     - infra.ee_utilities.ee_builder
-...
