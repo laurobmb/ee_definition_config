@@ -1,6 +1,6 @@
 ---
 - name: Playbook to create custom EE
-  hosts: localhost
+  hosts: all
   gather_facts: false
   vars:
     ee_validate_certs: false
