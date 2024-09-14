@@ -1,16 +1,32 @@
 ---
 - name: Playbook to create custom EE
-  hosts: all
+  hosts: localhost
+  connection: local
   gather_facts: false
   vars:
+    controller_username: "{{ automation_controller_user | default(lookup('env', 'CONTROLLER_USERNAME')) }}"
+    controller_password: "{{ automation_controller_pass | default(lookup('env', 'CONTROLLER_PASSWORD')) }}"
+    controller_hostname: "{{ automation_controller_host | default(lookup('env', 'CONTROLLER_HOST')) }}"
+    controller_validate_certs: "{{ controller_validate_certs | default(lookup('env', 'CONTROLLER_VERIFY_SSL')) }}"
+
     controller_execution_environments:
       - name: ee-config-hub-rhel9
         description: ee cac
         organization: ee_build
-        image: automationhub01.localnet.local/admin/config-rhel9:v10
+        image: controller01.localnet.local:8444/admin/config-rhel9:v10
+
+      - name: ee-servicenow-hub-rhel9
+        description: ee cac
+        organization: ee_build
+        image: controller01.localnet.local:8444/admin/servicenow-rhel9:v10
+
+      - name: ee-windows-hub-rhel9
+        description: ee cac
+        organization: ee_build
+        image: controller01.localnet.local:8444/admin/windows-rhel9:v10
 
   tasks:
     - name: Add Execution Environment
       ansible.builtin.include_role:
-        name: laurobmb.controller_configuration.execution_environments
+        name: infra.controller_configuration.execution_environments
 ...
