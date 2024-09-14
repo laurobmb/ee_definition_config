@@ -8,46 +8,46 @@
     ee_base_image: registry.redhat.io/ansible-automation-platform-24/ee-minimal-rhel9:latest
     ee_pull_collections_from_hub: true
     ee_list:
-      - name: config-rhel9
-        alt_name: Custom EE Config
-        tag: v10
-        options:
-          package_manager_path: /usr/bin/microdnf
-        dependencies:
-          system:
-            - python-requests
-            - python-pyyaml
-          python:
-            - pyOpenSSL
-          galaxy:
-            collections:
-              - name: infra.ah_configuration
-              - name: infra.controller_configuration
-              - name: infra.eda_configuration
-              - name: infra.ee_utilities
-              - name: containers.podman
-        build_steps:
-          append_final:
-            - RUN echo This is a post-install command!
-
-      - name: servicenow-rhel9
-        alt_name: Custom EE Config
-        tag: v10
-        options:
-          package_manager_path: /usr/bin/microdnf
-        dependencies:
-          system:
-            - python-requests
-            - python-pyyaml
-          python:
-            - pyOpenSSL
-          galaxy:
-            collections:
-              - name: servicenow.servicenow
-              - name: servicenow.itsm
-        build_steps:
-          append_final:
-            - RUN echo This is a post-install command!
+#      - name: config-rhel9
+#        alt_name: Custom EE Config
+#        tag: v10
+#        options:
+#          package_manager_path: /usr/bin/microdnf
+#        dependencies:
+#          system:
+#            - python-requests
+#            - python-pyyaml
+#          python:
+#            - pyOpenSSL
+#          galaxy:
+#            collections:
+#              - name: infra.ah_configuration
+#              - name: infra.controller_configuration
+#              - name: infra.eda_configuration
+#              - name: infra.ee_utilities
+#              - name: containers.podman
+#        build_steps:
+#          append_final:
+#            - RUN echo This is a post-install command!
+#
+#      - name: servicenow-rhel9
+#        alt_name: Custom EE Config
+#        tag: v10
+#        options:
+#          package_manager_path: /usr/bin/microdnf
+#        dependencies:
+#          system:
+#            - python-requests
+#            - python-pyyaml
+#          python:
+#            - pyOpenSSL
+#          galaxy:
+#            collections:
+#              - name: servicenow.servicenow
+#              - name: servicenow.itsm
+#        build_steps:
+#          append_final:
+#            - RUN echo This is a post-install command!
 
       - name: windows-rhel9
         alt_name: Custom EE Config

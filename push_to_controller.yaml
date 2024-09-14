@@ -7,7 +7,7 @@
     controller_username: "{{ automation_controller_user | default(lookup('env', 'CONTROLLER_USERNAME')) }}"
     controller_password: "{{ automation_controller_pass | default(lookup('env', 'CONTROLLER_PASSWORD')) }}"
     controller_hostname: "{{ automation_controller_host | default(lookup('env', 'CONTROLLER_HOST')) }}"
-    controller_validate_certs: "{{ controller_validate_certs | default(lookup('env', 'CONTROLLER_VERIFY_SSL')) }}"
+    controller_validate_certs: false
 
     controller_execution_environments:
       - name: ee-config-hub-rhel9
