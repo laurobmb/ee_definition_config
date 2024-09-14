@@ -12,5 +12,5 @@
   tasks:
     - name: Add Execution Environment
       ansible.builtin.include_role:
-        name: infra.controller_configuration.execution_environments
+        name: laurobmb.controller_configuration.execution_environments
 ...
