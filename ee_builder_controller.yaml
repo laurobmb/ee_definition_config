@@ -29,5 +29,46 @@
         build_steps:
           append_final:
             - RUN echo This is a post-install command!
+
+      - name: servicenow-rhel9
+        alt_name: Custom EE Config
+        tag: v10
+        options:
+          package_manager_path: /usr/bin/microdnf
+        dependencies:
+          system:
+            - python-requests
+            - python-pyyaml
+          python:
+            - pyOpenSSL
+          galaxy:
+            collections:
+              - name: servicenow.servicenow
+              - name: servicenow.itsm
+        build_steps:
+          append_final:
+            - RUN echo This is a post-install command!
+
+      - name: windows-rhel9
+        alt_name: Custom EE Config
+        tag: v10
+        options:
+          package_manager_path: /usr/bin/microdnf
+        dependencies:
+          system:
+            - python-requests
+            - python-pyyaml
+          python:
+            - pyOpenSSL
+          galaxy:
+            collections:
+              - name: community.windows
+              - name: ansible.windows
+              - name: community.general
+              - name: ansible.posix
+        build_steps:
+          append_final:
+            - RUN echo This is a post-install command!
+
   roles:
     - infra.ee_utilities.ee_builder
