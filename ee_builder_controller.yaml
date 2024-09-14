@@ -71,4 +71,5 @@
             - RUN echo This is a post-install command!
 
   roles:
-    - infra.ee_utilities.ee_builder
+#    - infra.ee_utilities.ee_builder
+    - laurobmb.ee_utilities.ee_builder
