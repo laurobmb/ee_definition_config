@@ -27,9 +27,9 @@
 
 
   tasks:
-    - name: Debug
-      ansible.builtin.debug:
-        var: ee_list
+#    - name: Debug
+#      ansible.builtin.debug:
+#        var: ee_list
 
     - name: Add Execution Environment
       ansible.builtin.include_role:
@@ -37,7 +37,7 @@
       loop: "{{ ee_list }}"
       vars:
         controller_execution_environment:
-          description: ee cac
+          description: EE build project to create new images and publish them on the HUB
           organization: ee_build
           image: "controller01.localnet.local:8444/admin/{{ item.name }}:{{ item.tag }}"
 ...
