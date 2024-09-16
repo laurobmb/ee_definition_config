@@ -1,0 +1,216 @@
+{
+    "plays": [
+        {
+            "__play_name": "Playbook to create custom EE",
+            "name": "Playbook to create custom EE",
+            "pattern": "localhost",
+            "play": "Playbook to create custom EE",
+            "play_pattern": "localhost",
+            "play_uuid": "d654a49c-4a3a-ae49-f0b1-000000000001",
+            "playbook": "/home/lagomes/MEGA/ansible/ansible-as-a-code/ee_definition_config/push_to_controller.yaml",
+            "playbook_uuid": "f51be770-776c-4210-bad8-4bd005c58557",
+            "tasks": [
+                {
+                    "__changed": false,
+                    "__duration": "0s",
+                    "__host": "localhost",
+                    "__number": 0,
+                    "__result": "Ok",
+                    "__task": "Add Execution Environment",
+                    "__task_action": "ansible.builtin.include_role",
+                    "duration": 0.005898,
+                    "end": "2024-09-16T01:14:59.147322+00:00",
+                    "event_loop": null,
+                    "host": "localhost",
+                    "play": "Playbook to create custom EE",
+                    "play_pattern": "localhost",
+                    "play_uuid": "d654a49c-4a3a-ae49-f0b1-000000000001",
+                    "playbook": "/home/lagomes/MEGA/ansible/ansible-as-a-code/ee_definition_config/push_to_controller.yaml",
+                    "playbook_uuid": "f51be770-776c-4210-bad8-4bd005c58557",
+                    "remote_addr": "127.0.0.1",
+                    "res": {
+                        "changed": false,
+                        "include_args": {
+                            "name": "infra.controller_configuration.execution_environments"
+                        }
+                    },
+                    "resolved_action": null,
+                    "start": "2024-09-16T01:14:59.141424+00:00",
+                    "task": "Add Execution Environment",
+                    "task_action": "ansible.builtin.include_role",
+                    "task_args": "",
+                    "task_path": "/home/lagomes/MEGA/ansible/ansible-as-a-code/ee_definition_config/push_to_controller.yaml:29",
+                    "task_uuid": "d654a49c-4a3a-ae49-f0b1-000000000003",
+                    "uuid": "88f33b3c-5d3c-4abe-a415-fa3ef4b473a2"
+                }
+            ],
+            "uuid": "d654a49c-4a3a-ae49-f0b1-000000000001"
+        }
+    ],
+    "settings_entries": {
+        "ansible-navigator": {
+            "ansible": {
+                "config": {
+                    "help": false
+                },
+                "doc": {
+                    "help": false,
+                    "plugin": {
+                        "type": "module"
+                    }
+                },
+                "inventory": {
+                    "help": false
+                },
+                "playbook": {
+                    "help": false,
+                    "path": "/home/lagomes/MEGA/ansible/ansible-as-a-code/ee_definition_config/push_to_controller.yaml"
+                }
+            },
+            "ansible-builder": {
+                "help": false,
+                "workdir": "/home/lagomes/MEGA/ansible/ansible-as-a-code/ee_definition_config"
+            },
+            "ansible-runner": {
+                "job-events": false
+            },
+            "app": "run",
+            "collection-doc-cache-path": "/home/lagomes/.cache/ansible-navigator/collection_doc_cache.db",
+            "color": {
+                "enable": true,
+                "osc4": true
+            },
+            "editor": {
+                "command": "/usr/bin/nano {filename}",
+                "console": true
+            },
+            "enable-prompts": false,
+            "exec": {
+                "command": "/bin/bash",
+                "shell": true
+            },
+            "execution-environment": {
+                "container-engine": "podman",
+                "enabled": true,
+                "environment-variables": {
+                    "pass": [
+                        "CONTROLLER_USERNAME",
+                        "CONTROLLER_PASSWORD",
+                        "CONTROLLER_HOST",
+                        "CONTROLLER_VERIFY_SSL"
+                    ],
+                    "set": {
+                        "CONTROLLER_HOST": "controller01.localnet.local:8443",
+                        "CONTROLLER_PASSWORD": "r3dh4t1!",
+                        "CONTROLLER_USERNAME": "admin",
+                        "CONTROLLER_VERIFY_SSL": "False"
+                    }
+                },
+                "image": "quay.io/lagomes/config-rhel9:v100",
+                "pull": {
+                    "policy": "missing"
+                }
+            },
+            "format": "yaml",
+            "images": {
+                "details": [
+                    "everything"
+                ]
+            },
+            "logging": {
+                "append": true,
+                "file": "/home/lagomes/MEGA/ansible/ansible-as-a-code/ee_definition_config/logs/ansible-navigator.log",
+                "level": "info"
+            },
+            "mode": "stdout",
+            "playbook-artifact": {
+                "enable": true,
+                "replay": "/home/lagomes/MEGA/ansible/ansible-as-a-code/ee_definition_config/artifacts/ansible_artifact.json",
+                "save-as": "artifacts/ansible_artifact.jsonl"
+            },
+            "settings": {
+                "effective": false,
+                "sample": false,
+                "schema": "json",
+                "sources": false
+            },
+            "time-zone": "UTC"
+        }
+    },
+    "settings_sources": {
+        "ansible-navigator.ansible-builder.help": "Defaults",
+        "ansible-navigator.ansible-builder.workdir": "Defaults",
+        "ansible-navigator.ansible-lint.config": "Not set",
+        "ansible-navigator.ansible-lint.lintables": "Not set",
+        "ansible-navigator.ansible-runner.artifact-dir": "Not set",
+        "ansible-navigator.ansible-runner.job-events": "Defaults",
+        "ansible-navigator.ansible-runner.rotate-artifacts-count": "Not set",
+        "ansible-navigator.ansible-runner.timeout": "Not set",
+        "ansible-navigator.ansible.cmdline": "Not set",
+        "ansible-navigator.ansible.config.help": "Defaults",
+        "ansible-navigator.ansible.config.path": "Not set",
+        "ansible-navigator.ansible.doc.help": "Defaults",
+        "ansible-navigator.ansible.doc.plugin.name": "Not set",
+        "ansible-navigator.ansible.doc.plugin.type": "Defaults",
+        "ansible-navigator.ansible.inventory.entries": "Not set",
+        "ansible-navigator.ansible.inventory.help": "Defaults",
+        "ansible-navigator.ansible.playbook.help": "Defaults",
+        "ansible-navigator.ansible.playbook.path": "Command line",
+        "ansible-navigator.app": "Command line",
+        "ansible-navigator.collection-doc-cache-path": "Defaults",
+        "ansible-navigator.color.enable": "Settings file",
+        "ansible-navigator.color.osc4": "Defaults",
+        "ansible-navigator.editor.command": "Defaults",
+        "ansible-navigator.editor.console": "Defaults",
+        "ansible-navigator.enable-prompts": "Defaults",
+        "ansible-navigator.exec.command": "Defaults",
+        "ansible-navigator.exec.shell": "Defaults",
+        "ansible-navigator.execution-environment.container-engine": "Settings file",
+        "ansible-navigator.execution-environment.container-options": "Not set",
+        "ansible-navigator.execution-environment.enabled": "Settings file",
+        "ansible-navigator.execution-environment.environment-variables.pass": "Settings file",
+        "ansible-navigator.execution-environment.environment-variables.set": "Settings file",
+        "ansible-navigator.execution-environment.image": "Settings file",
+        "ansible-navigator.execution-environment.pull.arguments": "Not set",
+        "ansible-navigator.execution-environment.pull.policy": "Settings file",
+        "ansible-navigator.execution-environment.volume-mounts": "Not set",
+        "ansible-navigator.format": "Defaults",
+        "ansible-navigator.images.details": "Defaults",
+        "ansible-navigator.inventory-columns": "Not set",
+        "ansible-navigator.logging.append": "Settings file",
+        "ansible-navigator.logging.file": "Settings file",
+        "ansible-navigator.logging.level": "Settings file",
+        "ansible-navigator.mode": "Settings file",
+        "ansible-navigator.playbook-artifact.enable": "Settings file",
+        "ansible-navigator.playbook-artifact.replay": "Settings file",
+        "ansible-navigator.playbook-artifact.save-as": "Settings file",
+        "ansible-navigator.settings.effective": "Defaults",
+        "ansible-navigator.settings.sample": "Defaults",
+        "ansible-navigator.settings.schema": "Defaults",
+        "ansible-navigator.settings.sources": "Defaults",
+        "ansible-navigator.time-zone": "Defaults",
+        "settings_file_path": "/home/lagomes/MEGA/ansible/ansible-as-a-code/ee_definition_config/ansible-navigator.yml",
+        "settings_file_source": "Search path"
+    },
+    "status": "failed",
+    "status_color": 9,
+    "stdout": [
+        "\u001b[1;35m[WARNING]: provided hosts list is empty, only localhost is available. Note that\u001b[0m",
+        "\u001b[1;35mthe implicit localhost does not match 'all'\u001b[0m",
+        "",
+        "PLAY [Playbook to create custom EE] ********************************************",
+        "",
+        "TASK [Add Execution Environment] ***********************************************",
+        "\u001b[0;31mERROR! couldn't resolve module/action 'execution_environment'. This often indicates a misspelling, missing collection, or incorrect module path.\u001b[0m",
+        "\u001b[0;31m\u001b[0m",
+        "\u001b[0;31mThe error appears to be in '/usr/share/ansible/collections/ansible_collections/infra/controller_configuration/roles/execution_environments/tasks/main.yml': line 3, column 3, but may\u001b[0m",
+        "\u001b[0;31mbe elsewhere in the file depending on the exact syntax problem.\u001b[0m",
+        "\u001b[0;31m\u001b[0m",
+        "\u001b[0;31mThe offending line appears to be:\u001b[0m",
+        "\u001b[0;31m\u001b[0m",
+        "\u001b[0;31m# Create Controller Execution Environments\u001b[0m",
+        "\u001b[0;31m- name: \"Managing Controller Execution Environments\"\u001b[0m",
+        "\u001b[0;31m  ^ here\u001b[0m"
+    ],
+    "version": "2.0.0"
+}
