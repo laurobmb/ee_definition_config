@@ -9,28 +9,35 @@
     controller_hostname: "{{ automation_controller_host | default(lookup('env', 'CONTROLLER_HOST')) }}"
     controller_validate_certs: false
 
-    controller_execution_environments:
-      - name: ee-config-hub-rhel9
-        description: ee cac
-        organization: ee_build
-        image: controller01.localnet.local:8444/admin/config-rhel9:v10
+#    controller_execution_environments:
+#      - name: ee-config-hub-rhel9
+#        description: ee cac
+#        organization: ee_build
+#        image: controller01.localnet.local:8444/admin/config-rhel9:v10
+#
+#      - name: ee-servicenow-hub-rhel9
+#        description: ee cac
+#        organization: ee_build
+#        image: controller01.localnet.local:8444/admin/servicenow-rhel9:v10
+#
+#      - name: ee-windows-hub-rhel9
+#        description: ee cac
+#        organization: ee_build
+#        image: controller01.localnet.local:8444/admin/windows-rhel9:v10
 
-      - name: ee-servicenow-hub-rhel9
-        description: ee cac
-        organization: ee_build
-        image: controller01.localnet.local:8444/admin/servicenow-rhel9:v10
-
-      - name: ee-windows-hub-rhel9
-        description: ee cac
-        organization: ee_build
-        image: controller01.localnet.local:8444/admin/windows-rhel9:v10
 
   tasks:
     - name: Debug
       ansible.builtin.debug:
         var: ee_list
-        
+
     - name: Add Execution Environment
       ansible.builtin.include_role:
         name: infra.controller_configuration.execution_environments
+      loop: "{{ ee_list }}"
+      vars:
+        controller_execution_environment:
+          description: ee cac
+          organization: ee_build
+          image: "controller01.localnet.local:8444/admin/{{ item.name }}:{{ item.tag }}"
 ...
