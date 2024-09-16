@@ -73,3 +73,9 @@
   roles:
 #    - infra.ee_utilities.ee_builder
     - laurobmb.ee_utilities.ee_builder
+
+  tasks:
+    - name: Salvando variaveis
+      ansible.builtin.set_stats:
+        data:
+          ee_list: "{{ ee_list }}"

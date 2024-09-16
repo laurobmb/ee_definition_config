@@ -26,6 +26,10 @@
         image: controller01.localnet.local:8444/admin/windows-rhel9:v10
 
   tasks:
+    - name: Debug
+      ansible.builtin.debug:
+        var: ee_list
+        
     - name: Add Execution Environment
       ansible.builtin.include_role:
         name: infra.controller_configuration.execution_environments
